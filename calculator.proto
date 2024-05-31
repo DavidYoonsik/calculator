@@ -1,0 +1,24 @@
+// calculator.proto
+syntax = "proto3";
+
+package calculator;
+
+// Go 패키지 경로 설정
+option go_package = "github.com/DavidYoonsik/calculator";
+
+// 서비스 정의
+service Calculator {
+    // Add 메서드 정의
+    rpc Add (AddRequest) returns (AddReply) {}
+}
+
+// 요청 메시지 정의
+message AddRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+// 응답 메시지 정의
+message AddReply {
+    int32 result = 1;
+}
